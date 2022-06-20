@@ -1,0 +1,1 @@
+<?php return ['required'=>'required','max'=>'max','invalid email'=>'invalid email','invalid phone'=>'invalid phone'];

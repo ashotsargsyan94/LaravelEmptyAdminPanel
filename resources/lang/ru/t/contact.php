@@ -1,0 +1,1 @@
+<?php return ['telephone'=>'Тлефон','email'=>'Эл.почта','interesting'=>'Что Вас интересует','send'=>'Отправить','send_question'=>'Отправить вопрос','me_in'=>'Мы в'];
