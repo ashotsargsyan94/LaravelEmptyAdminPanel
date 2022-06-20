@@ -17,7 +17,8 @@ class LanguageManager
         return 'locale';
     }
     public function getPrefix(){
-        $this->locales = Language::getIsos();
+        // Uncomment after DB configs
+//        $this->locales = Language::getIsos();
         $this->defaultLocale = $this->locales[settings('default_language', 1)];
         $firstSegment = Request::segment(1, null);
         if(preg_match('/^[a-z]{2}$/', $firstSegment)){

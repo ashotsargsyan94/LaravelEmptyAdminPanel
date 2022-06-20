@@ -25,16 +25,12 @@ class Language extends Model
         return (self::where('iso', $iso)->count()!=0);
     }
     public static function getIsos(){
-        return Cache::rememberForever(self::cacheKeyIsos(), function(){
-            return self::select('id', 'iso')->where('active', 1)->get()->mapWithKeys(function($item){
-                return [$item->id=>$item->iso];
-            })->toArray();
-        });
+        return self::select('id', 'iso')->where('active', 1)->get()->mapWithKeys(function($item){
+            return [$item->id=>$item->iso];
+        })->toArray();
     }
     public static function getLanguages(){
-        return Cache::rememberForever(self::cacheKeyLanguages(), function(){
-            return self::where('active', 1)->sort()->get();
-        });
+        return self::where('active', 1)->sort()->get();
     }
     public function scopeSort($query) {
         return $query->orderBy('id', 'asc');
